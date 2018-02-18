@@ -1,0 +1,23 @@
+{
+  "name": "vue-typeahead-static",
+  "version": "1.0.0",
+  "description": "A typeahead for Vue 2.x which loads data via the frontend, instead of through API requests.",
+  "main": "index.vue",
+  "dependencies": {
+    "vue": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vue",
+    "typeahead",
+    "Vue2",
+    "static",
+    "data",
+    "client",
+    "frontend"
+  ],
+  "author": "Andrew Peters <andrew.peters.dev@gmail.com>",
+  "license": "MIT"
+}
