@@ -6,6 +6,8 @@ Credits to trionfo1993 for inspiration and  the code for some of the events.
 
 This component has been built for *Bootstrap 4.* I haven’t tested it on Bootstrap 3, but I’d assume it work OK given a few tweaks.
 
+[An image of what it looks like.](https://gyazo.com/acaf451be6b03738539a96423e30ed92)
+
 ## Installation instructions
 
 To install the program:
@@ -28,7 +30,7 @@ Vue.component('TypeAhead', TypeAhead);
 Note that vue-typeahead-static accepts *v-model*
 
 ### Required
-* *data* - [String] (array of strings) - Data for the component to work with
+* *data* - Array (of Strings) - Data for the component to work with
 
 ### Optional
 * *placeholder* - String - A placeholder for the input
