@@ -223,9 +223,9 @@ export default {
 		//the results look better
         this.data.sort()
 
-    	if(this.startVal){
+    	if(this.startValue){
     		//assign starting value
-        	this.query = this.startVal;
+        	this.query = this.startValue;
     	}
 
     	document.addEventListener('click', (e) => {

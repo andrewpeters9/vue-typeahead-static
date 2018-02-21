@@ -4,7 +4,7 @@ This typeahead was created to fill a need: all existing Vue typeaheads required 
 
 Credits to trionfo1993 for inspiration and  the code for some of the events.
 
-This component has been built for *Bootstrap 4.* I haven’t tested it on Bootstrap 3, but I’d assume it work OK given a few tweaks.
+This component has been built for *Bootstrap 4.* I haven’t tested it on Bootstrap 3, but I would assume it would work OK given a few tweaks.
 
 [An image of what it looks like.](https://gyazo.com/acaf451be6b03738539a96423e30ed92)
 
@@ -41,3 +41,5 @@ Note that vue-typeahead-static accepts *v-model*
 * *startValue* - String - A value for the input to start off with
 * *tabOnEnter* - Boolean - default: true - Whether or not the component will ‘tab’ off focus to the next ‘tab-able’ element
 * *noResultsText* - String - default: ‘No results found.’ - A string to be shown when there are no remaining results.
+
+Note that there is a tabbing fix implemented, but it won’t work if there are tab indexes in your form.
