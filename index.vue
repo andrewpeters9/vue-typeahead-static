@@ -19,7 +19,7 @@
 				v-html="highlight(match)"
 				:class="{active: index === current}"
 				@click="linkClick(match)"></a>
-			<div class="empty-search-text" v-if="!matches.length" v-bind="noResultsText"></div>
+			<div class="empty-search-text" v-if="!matches.length">{{noResultsText}}</div>
 		</div>
 	</div>
 </template>
