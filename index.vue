@@ -8,7 +8,7 @@
             :id="'type-' + identifier"
             @input="update()"
             @focus="focus()"
-            @keydown.tab.prevent="tabToNext($event)"
+            @keydown.tab.prevent="handleTab($event)"
             @keydown.down="down"
             @keydown.up="up"
             @keydown.enter.prevent="enter($event)"
@@ -65,10 +65,15 @@ export default {
 		},
 		tabOnEnter: {
 			//if true, we'll tab across to the next
-			//tab-able item
+			//tab-able item on enter
 			type: Boolean,
 			required: false,
 			default: true
+		},
+		tabToSelect: {
+			type: Boolean,
+			required: false,
+			default: false
 		},
 		value:{
 			type: String,
@@ -102,7 +107,23 @@ export default {
       	}
     },
 	methods: {
+		handleTab: function(event){
+			if(this.tabToSelect && this.showMenu && this.current !== -1){
+				return this.selectWithTab(event);
+			}
+			this.tabToNext(event);
+		},
+		selectWithTab: function(event){
+			this.query = this.matches[this.current];
+
+			//hide menu and tab to next element
+			this.showMenu = false
+			if(this.tabOnEnter){
+				this.tabToNext(event);
+			}
+		},
 		tabToNext: function(event){
+
 			this.showMenu = false;
 
 			//note that this doesn't work with tab-indexes
