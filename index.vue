@@ -215,9 +215,14 @@ export default {
 				//if the query isn't long enough
 				return this.pushResults([])
 			}
-
+			
+			const cleanedQuery = this.query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').toLowerCase();
+			
 			//filter the results, and then remove anything over max results
-			let filtered = this.data.filter(entity => entity.toLowerCase().includes(this.query.toLowerCase()));
+			let filtered = this.data.filter(entity => {
+				let cleanedEntity = entity.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').toLowerCase();
+				return cleanedEntity.includes(cleanedQuery)
+			});
 			filtered = filtered.slice(0, this.maxResults);
 
         	this.pushResults(filtered);
@@ -226,8 +231,9 @@ export default {
 			//takes text and wraps it with <b> tags
 			//where query matches
 
+			const cleanedQuery = this.query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 			//create a case-insensitive regexp with query
-			let re = new RegExp(this.query, 'ig');
+			let re = new RegExp(cleanedQuery, 'ig');
 			//find all matches
 	        let instances = text.match(re);
 
