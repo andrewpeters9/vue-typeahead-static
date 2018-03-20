@@ -19,7 +19,7 @@
 				v-html="highlight(match)"
 				:class="{active: index === current}"
 				@click="linkClick(match)"></a>
-			<div class="empty-search-text" v-if="!matches.length && showNotFound">{{noResultsText}}</div>
+			<div class="empty-search-text" v-if="!matches.length">{{noResultsText}}</div>
 		</div>
 	</div>
 </template>
@@ -161,6 +161,10 @@ export default {
 		checkShow: function(){
 			//check to see if the dropdown
 			//should be shown
+
+			if(this.showNotFound === false && this.matches.length === 0){
+				return false
+			}
 
 			//show if showMenu is true and query is long enough
 			return this.showMenu && this.query.length >= this.searchMin;
