@@ -19,7 +19,7 @@
 				v-html="highlight(match)"
 				:class="{active: index === current}"
 				@click="linkClick(match)"></a>
-			<div class="empty-search-text" v-if="!matches.length">{{noResultsText}}</div>
+			<div class="empty-search-text" v-if="!matches.length && showNotFound">{{noResultsText}}</div>
 		</div>
 	</div>
 </template>
@@ -84,6 +84,11 @@ export default {
 			type: String,
 			required: false,
 			default: 'No results found.'
+		},
+		showNotFound:{
+			type: Boolean,
+			required: false,
+			default: true
 		}
 	},
 	data(){
