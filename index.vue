@@ -94,6 +94,7 @@ export default {
 	data(){
 		return {
 			query: '',
+			focusedViaCode: false,
 			current: -1,
 			matches: [],
 			showMenu: false,
@@ -157,6 +158,8 @@ export default {
 		linkClick: function(value) {
 	        this.query = value;
 	        this.showMenu = false;
+	        this.focusedViaCode = true;
+	        document.getElementById('type-' + this.identifier).focus();
 	    },
 		checkShow: function(){
 			//check to see if the dropdown
@@ -212,7 +215,10 @@ export default {
 		},
 		focus: function(){
 			//fired when the input is clicked
-
+			if(this.focusedViaCode){
+				this.focusedViaCode = false;
+				return;
+			}
 			this.showMenu = true;
 			this.update();
 		},

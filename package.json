@@ -1,6 +1,6 @@
 {
   "name": "vue-typeahead-static",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A typeahead for Vue 2.x which loads data via the frontend, instead of through API requests.",
   "main": "index.vue",
   "dependencies": {
